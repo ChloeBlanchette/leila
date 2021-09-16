@@ -22,8 +22,8 @@
   $langueChoisie = 'fr';
 
   // B - Vérifier si l'utilisateur a déjà fait un choix de langue auparavant
-  if (isset($_COOKIE['leila-langue'])) {
-    $langueChoisie = $_COOKIE['leila-langue'];
+  if (isset($_COOKIE['leila_langue'])) {
+    $langueChoisie = $_COOKIE['leila_langue'];
   }
 
   // C - Si l'utilisateur choisi une langue en cliquant un lien dans la nav
@@ -68,8 +68,8 @@
           <h1 class="logo"><a href="index.php">LEILA</a></h1> 
         <?php } ?>
         <nav class="i18n">
-          <a href="?langue=fr" class="actif" title="Français">fr</a>
-          <a href="?langue=en" title="English">en</a>
+          <a href="?langue=fr" class="<?php if ($langueChoisie == 'fr') {echo 'actif';} ?>" title="Français">fr</a>
+          <a href="?langue=en" class="<?php if ($langueChoisie == 'en') {echo 'actif';} ?>" title="English">en</a>
         </nav>
       </div>
       <div class="titre-page">
