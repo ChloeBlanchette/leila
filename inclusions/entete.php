@@ -1,4 +1,5 @@
 <?php
+  
 
   /*
   // Requête HTTP de type GET
@@ -20,12 +21,15 @@
 
   // Langue disponible
   $languesDisponibles = [];
+  $nomsDesLangues = [];
   $contenuDossierTextes = scandir('textes');
   foreach ($contenuDossierTextes as $nomDossier) 
   {
     if ($nomDossier != '.' && $nomDossier != '..') 
     {
-      $languesDisponibles[] = $nomDossier;
+      $codeEtNomLangue = explode('-', $nomDossier);
+      $languesDisponibles[] = $codeEtNomLangue[0];
+      $nomsDesLangues[$codeEtNomLangue[0]] = $codeEtNomLangue[1];
     }
   }
 
@@ -36,12 +40,12 @@
   $langueChoisie = 'fr';
 
   // B - Vérifier si l'utilisateur a déjà fait un choix de langue auparavant
-  if (isset($_COOKIE['leila_langue'])) {
+  if (isset($_COOKIE['leila_langue']) && in_array($_COOKIE['leila_langue'], $languesDisponibles)) {
     $langueChoisie = $_COOKIE['leila_langue'];
   }
 
   // C - Si l'utilisateur choisi une langue en cliquant un lien dans la nav
-  if (isset($_GET['langue'])) 
+  if (isset($_GET['langue']) && in_array($_GET['langue'], $languesDisponibles)) 
   {
     $langueChoisie = $_GET['langue'];
 
@@ -50,7 +54,7 @@
   }
 
   // Charger les textes
-  include('textes/' . $langueChoisie . '/i18n.txt.php');
+  include('textes/' . $langueChoisie . '-' . $nomsDesLangues[$langueChoisie] . '/i18n.txt.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,7 +87,7 @@
         <?php } ?>
         <nav class="i18n">
           <?php foreach ($languesDisponibles as $codeLangue) { ?>
-            <a href="?langue=<?= $codeLangue; ?>" class="<?php if ($langueChoisie == $codeLangue) {echo 'actif';} ?>" title="Français"><?= $codeLangue; ?></a>
+            <a href="?langue=<?= $codeLangue; ?>" class="<?php if ($langueChoisie == $codeLangue) {echo 'actif';} ?>" title="<?= $nomsDesLangues[$codeLangue]; ?>"><?= $codeLangue; ?></a>
           <?php } ?>
         </nav>
       </div>

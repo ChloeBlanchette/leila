@@ -3,18 +3,18 @@
 
 $meta = [
     "accueil" => [  
-                    "titre" => "Welcome", 
-                    "desc"  => "Restaurant Leila - Montreal",
+                    "titre" => "Accoglienza", 
+                    "desc"  => "Ristorante Leila - Montreal",
                     "h1"    => "Leila"
                  ],
     "menu"    => [
-                    "titre" => "Our Menus", 
-                    "desc"  => "Menu du restaurant Leila à Montréal",
+                    "titre" => "I nostri menù", 
+                    "desc"  => "Menu del ristorante Leila a Montreal",
                     "h1"    => "Menù"
                  ],
     "vins"    => [
-                    "titre" => "Winelist", 
-                    "desc"  => "Carte des vins du restaurant Leila à Montréal",
+                    "titre" => "Lista dei vini", 
+                    "desc"  => "Carta dei vini del ristorante Leila a Montreal",
                     "h1"    => "Lista dei vini"
                  ]
 ];
