@@ -18,6 +18,20 @@
   include('textes/fr/i18n.txt.php')
   */
 
+  // Langue disponible
+  $languesDisponibles = [];
+  $contenuDossierTextes = scandir('textes');
+  foreach ($contenuDossierTextes as $nomDossier) 
+  {
+    if ($nomDossier != '.' && $nomDossier != '..') 
+    {
+      $languesDisponibles[] = $nomDossier;
+    }
+  }
+
+  // print_r($languesDisponibles);
+
+  //i18n
   // A - Déterminer la langue par défaut
   $langueChoisie = 'fr';
 
@@ -68,8 +82,9 @@
           <h1 class="logo"><a href="index.php">LEILA</a></h1> 
         <?php } ?>
         <nav class="i18n">
-          <a href="?langue=fr" class="<?php if ($langueChoisie == 'fr') {echo 'actif';} ?>" title="Français">fr</a>
-          <a href="?langue=en" class="<?php if ($langueChoisie == 'en') {echo 'actif';} ?>" title="English">en</a>
+          <?php foreach ($languesDisponibles as $codeLangue) { ?>
+            <a href="?langue=<?= $codeLangue; ?>" class="<?php if ($langueChoisie == $codeLangue) {echo 'actif';} ?>" title="Français"><?= $codeLangue; ?></a>
+          <?php } ?>
         </nav>
       </div>
       <div class="titre-page">
