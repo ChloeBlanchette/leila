@@ -1,25 +1,6 @@
 <?php
-  
 
-  /*
-  // Requête HTTP de type GET
-  echo "Valeur du paramètre 'langue' envoyé avec l'URL : ";
-  
-  // Vérifier 
-  if (isset($_GET['langue'])) 
-  {
-    echo $_GET['langue'];
-  }
-
-  // Test
-  echo '<hr/>Contenu du tableau en PHP : <hr/>';
-  print_r($_GET);
-
-  // Charger les textes
-  include('textes/fr/i18n.txt.php')
-  */
-
-  // Langue disponible
+// Langue disponible
   $languesDisponibles = [];
   $nomsDesLangues = [];
   $contenuDossierTextes = scandir('textes');
@@ -32,8 +13,6 @@
       $nomsDesLangues[$codeEtNomLangue[0]] = $codeEtNomLangue[1];
     }
   }
-
-  // print_r($languesDisponibles);
 
   //i18n
   // A - Déterminer la langue par défaut
