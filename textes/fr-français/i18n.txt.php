@@ -58,6 +58,8 @@ $meta = [
                  ]
 ];
 
+$mnu_portion = "portions";
+
 // Entête
 $en_sousTitre = "CUISINE BISTRONOMIQUE";
 $en_heuresOuverture = "Ouvert aujourd'hui jusqu'à 23 h";

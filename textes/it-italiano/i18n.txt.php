@@ -19,6 +19,8 @@ $meta = [
                  ]
 ];
 
+$mnu_portion = "porzioni";
+
 // Entête
 $en_sousTitre = "CUCCINA BISTRONOMICA";
 $en_heuresOuverture = "Open today until 11PM";
