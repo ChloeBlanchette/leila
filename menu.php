@@ -41,7 +41,7 @@
             <!-- Boucle pour générer dynamiquement les plats dans la section de menu courante -->
             <?php foreach($platsSection as $plat) : ?>
             <li>
-              <span>Nom du plat<br><i>Description du plat</i></span>
+              <span><?= $plat['nom']; ?><br><i>Description du plat</i></span>
               <span class="prix"><i class="article-menu-portion">(2 <?= $mnu_portion; ?>)</i>prix</span>
             </li>
             <?php endforeach; ?>
