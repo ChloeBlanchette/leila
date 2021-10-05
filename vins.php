@@ -3,13 +3,19 @@
 
   // Inclure l'entête
   include('inclusions/entete.php');
+
+  //Inclure la librairie 'citation'
+  include('lib/citations.lib.php');
+  
+  // Obtenir une citation aléatoire
+  $citation = citationAleatoire($langueChoisie, 'vins');
 ?>
     <div class="contenu-principal">
       <div class="citation">
         <img src="images/vins-citation.png" alt="">
         <blockquote>
-          Le vin est la partie intellectuelle d’un repas, les viandes et les légumes n’en sont que la partie matérielle.
-          <cite>- Alexandre Dumas</cite>
+          <?= $citation['texte']; ?>
+          <cite>- <?= $citation['auteur']; ?></cite>
         </blockquote>
       </div>
       <form class="frm-recherche">

@@ -1,5 +1,4 @@
 <?php
-
 // Langue disponible
   $languesDisponibles = [];
   $nomsDesLangues = [];
@@ -34,6 +33,14 @@
 
   // Charger les textes
   include('textes/' . $langueChoisie . '-' . $nomsDesLangues[$langueChoisie] . '/i18n.txt.php');
+
+  // Gérer le choix d'une citation aléatoire
+  /*
+  $citation = [
+    "texte"   =>  "Le texte de la citation",
+    "auteur"  =>  "Monsieur Untel",
+  ]
+  */
 ?>
 <!DOCTYPE html>
 <html>
